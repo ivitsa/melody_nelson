@@ -1,7 +1,6 @@
 MelodyNelson::Application.routes.draw do
   get "events/index"
   get "events/update"
-  get "events/delete"
   get "events/new"
   post "events/new"
   
