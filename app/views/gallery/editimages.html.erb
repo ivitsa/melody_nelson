@@ -1,0 +1,20 @@
+<h1>Gallery#editimages</h1>
+<p>Find me in app/views/gallery/editimages.html.erb</p>
+<div id="notice"><%= flash[:notice] %></div>
+<% if @photos.count!=0 %>
+	<% @photos.each do |p| %>
+		<p><%=p.description %><br/>
+		<%= image_tag p.image.url(:small) %><br/>
+		<%= link_to "Update", edit_gallery_path(p) %>
+		<%= link_to "Delete", gallery_path(p), method: "delete", data: { confirm: 'Are you sure?'} %>
+		</p>
+	<% end %>
+<% else %>
+	<p>
+	You haven't uploaded any photos yet.
+	</p>
+<% end %>
+	<p>
+	<%= link_to "Upload new photo", action: "new" %>
+	<%= link_to "Go back to gallery", action: "index" %>
+	</p>

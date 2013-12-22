@@ -1,4 +1,11 @@
 MelodyNelson::Application.routes.draw do
+  get "gallery/index"
+  get "gallery/editimages"
+  get "gallery/edit"
+  get "gallery/update"
+  get "gallery/new"
+  get "gallery/create"
+  get "gallery/destroy"
   get "contacts/index"
   get "contacts/new"
   get "contacts/create"
@@ -8,10 +15,11 @@ MelodyNelson::Application.routes.draw do
   get "events/index"
   get "events/update"
   get "events/new"
-  post "events/new"
   
   resources :events, :path => "events"
   resources :contacts, :path => "contacts"
+  resources :gallery, :path => "gallery"
+  resources :photos, :path => "gallery"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,13 @@
+<h1>Gallery#index</h1>
+<p>Find me in app/views/gallery/index.html.erb</p>
+<div id="notice"><%= flash[:notice] %></div>
+<% @photos.each do |p| %>
+	<p><%=p.description %><br/>
+	<%= image_tag p.image.url(:thumb) %><br/>
+	<%= link_to "Update", edit_gallery_path(p) %>
+	<%= link_to "Delete", gallery_path(p), method: "delete", data: { confirm: 'Are you sure?'} %>
+	</p>
+<% end %>
+	<p>
+	<%= link_to "Upload new photo", action: "new" %>
+	</p>
