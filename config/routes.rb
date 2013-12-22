@@ -1,10 +1,17 @@
 MelodyNelson::Application.routes.draw do
+  get "contacts/index"
+  get "contacts/new"
+  get "contacts/create"
+  get "contacts/edit"
+  get "contacts/update"
+  get "contacts/destroy"
   get "events/index"
   get "events/update"
   get "events/new"
   post "events/new"
   
   resources :events, :path => "events"
+  resources :contacts, :path => "contacts"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

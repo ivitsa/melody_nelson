@@ -1,0 +1,13 @@
+<h1>Contacts#edit</h1>
+<p>Find me in app/views/contacts/edit.html.erb</p>
+<%= form_for @contact do |c| %>
+	<p>
+	Name:<%= c.text_field :name %><br/>
+	Address:<%= c.text_field :address %><br/>
+	Phone:<%= c.text_field :phone %><br/>
+	Email:<%= c.text_field :email %><br/>
+	Opening hours: <%= c.text_field :opening_hours %><br/>
+	Facebook: <%= c.text_field :facebook %><br/>
+	<%= c.submit "Update" %>
+	</p>
+<% end %>
