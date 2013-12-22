@@ -35,8 +35,9 @@ class EventsController < ApplicationController
   end
   def create
   	  if request.post?
-  	  	  if Event.create(:headline => params[:event][:headline], :description => params[:event][:description], 
+  	  	  @event = Event.new(:headline => params[:event][:headline], :description => params[:event][:description], 
   	  	  		  :time=>params[:event][:time], :image => params[:event][:image])
+  	  	  if  @event.save
   	  	  	  flash[:notice]="Event successfully added"
   	  	  else
   	  	  	  flash[:notice]="Error! Could not add event"
