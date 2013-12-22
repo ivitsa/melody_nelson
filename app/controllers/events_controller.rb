@@ -10,7 +10,8 @@ class EventsController < ApplicationController
   def update
   	  @event=Event.find(params[:id])
   	  if request.patch?
-  	  	  if @event.update(:headline => params[:event][:headline], :description => params[:event][:description], :time=>params[:event][:time])
+  	  	  if @event.update(:headline => params[:event][:headline], :description => params[:event][:description], 
+  	  	  		  :time=>params[:event][:time], :image => params[:event][:image])
   	  	  	  flash[:notice]="Event successfully updated"
   	  	  else
   	  	  	  flash[:notice]="Error! Could not update event"
@@ -34,7 +35,8 @@ class EventsController < ApplicationController
   end
   def create
   	  if request.post?
-  	  	  if Event.create(:headline => params[:event][:headline], :description => params[:event][:description], :time=>params[:event][:time])
+  	  	  if Event.create(:headline => params[:event][:headline], :description => params[:event][:description], 
+  	  	  		  :time=>params[:event][:time], :image => params[:event][:image])
   	  	  	  flash[:notice]="Event successfully added"
   	  	  else
   	  	  	  flash[:notice]="Error! Could not add event"

@@ -1,10 +1,11 @@
 <h1>Events#edit</h1>
 <p>Find me in app/views/events/edit.html.erb</p>
-<%= form_for @event do |e| %>
+<%= form_for @event, :html => {:multipart => 'true'} do |e| %>
 	<p>
 	<%= e.text_field :headline %><br/>
 	<%= e.text_area :description, size: "60x12" %><br/>
 	<%= e.datetime_select :time %><br/>
+	<%= e.file_field :image %><br/>
 	<%= e.submit "Update" %>
 	</p>
 <% end %>
