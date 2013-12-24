@@ -4,7 +4,7 @@
 <% @events.each do |e| %>
 	<p><%=e.headline %><br/>
 	<%= e.time %><br/>
-	<%= image_tag e.image.url %><br/>
+	<%= image_tag e.image.url(:medium) %><br/>
 	<%= e.description %><br/>
 	<%= link_to "Update", edit_event_path(e) %>
 	<%= link_to "Delete", event_path(e), method: "delete", data: { confirm: 'Are you sure?'} %>

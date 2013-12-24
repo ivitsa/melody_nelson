@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MelodyNelson</title>
+  <title>Melody Nelson Bar</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="logo"><%= image_tag("logo.jpg") %></div>
+		<div id="sidebar">
+			<ul>
+				<li><%= link_to "BAR", controller: "gallery" %></li>
+				<li><%= link_to "MENU", controller: "events" %></li>
+				<li><%= link_to "EVENTS", controller: "events" %></li>
+				<li><%= link_to "CONTACT", controller: "contacts" %></li>
+			<ul>
+		</div>
+		<div id="content">
+			<!--<div id="headline">Contact</div>-->
+			<%= yield %>
+		</div>
 
-<%= yield %>
+
 
 </body>
 </html>

@@ -1,16 +1,17 @@
-<h1>Contacts#index</h1>
-<p>Find me in app/views/contacts/index.html.erb</p>
 <div id="notice"><%= flash[:notice] %></div>
 <% if @contact %>
-		<p><%=@contact.name %><br/>
-		<%= @contact.address %><br/>
-		<%= @contact.phone %><br/>
-		<%= @contact.email %><br/>
-		<%= @contact.opening_hours %><br/>
-		<%= @contact.facebook %><br/>
+		 
+		<div id = "contact" >
+		<p><%=@contact.name.upcase %><br/>
+		<%= @contact.address.upcase %><br/>
+		<%= @contact.phone.upcase %><br/>
+		<%= @contact.email.upcase %><br/>
+		<%= @contact.opening_hours.upcase %><br/>
+		<%= @contact.facebook.upcase %><br/>
 		<%= link_to "Update contact info", edit_contact_path(@contact) %>
 		<%= link_to "Reset contact info", contact_path(@contact), method: "delete", data: { confirm: 'Are you sure?'} %>
 		</p>
+		</div>
 <% else %>
 	<p> You haven't added any contact information to the site</p></br>
 	<%= link_to "Add contact information", action: "new" %>
