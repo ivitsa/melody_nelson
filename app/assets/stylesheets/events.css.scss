@@ -1,3 +1,33 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.event{
+	display: block;
+	height: 150px;
+	padding: 5px 20px 5px 20px;
+	font-size: 15px;
+	/*border-top: 1px solid black;
+	border-bottom: 1px solid black;*/
+	}
+.event img {
+	height: 140px;
+	float: left;
+	display: inline;
+	margin-right: 15px;
+	border: 2px solid #888888;
+	padding: 3px;
+	}
+.event p {
+	margin-left: 10px;
+	}
+.eventhead {
+	font-size: 25px;
+	font-weight: bold;
+	}
+.eventtime {
+	font-size: 20px;
+	color: white;
+	background-color: black;
+	display: inline;
+	padding: 5px;
+	}
