@@ -2,12 +2,17 @@
 <% if @contact %>
 		 
 		<div id = "contact" >
-		<p><%=@contact.name.upcase %><br/>
-		<%= @contact.address.upcase %><br/>
-		<%= @contact.phone.upcase %><br/>
-		<%= @contact.email.upcase %><br/>
-		<%= @contact.opening_hours.upcase %><br/>
-		<%= @contact.facebook.upcase %><br/>
+		
+		<div class = "contactinfo">
+		<h2><%=@contact.name.upcase %></h2>
+		<p>
+		<%= @contact.address %><br/><br/>
+		<%= @contact.phone.upcase %><br/><br/>
+		<%= @contact.email %><br/><br/>
+		<%= "Open " + @contact.opening_hours %><br/><br/>
+		Find us on:<br/>
+		<%= link_to image_tag('facebook_white.png') + "| Facebook", @contact.facebook, :style=> "float: left;", :target=>"_blank" %>
+		<%= link_to image_tag('google.png') + "| Google maps", "http://maps.google.com?q=" + @contact.address, :style=> "float: right;", :target=>"_blank" %><br/><br/>
 		<%= link_to "Update contact info", edit_contact_path(@contact) %>
 		<%= link_to "Reset contact info", contact_path(@contact), method: "delete", data: { confirm: 'Are you sure?'} %>
 		</p>
