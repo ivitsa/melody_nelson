@@ -11,10 +11,10 @@
 <div id="logo"><%= image_tag("logo.jpg") %></div>
 		<div id="sidebar">
 			<ul>
-				<li><%= link_to "BAR", controller: "gallery" %></li>
-				<li><%= link_to "MENU", controller: "events" %></li>
-				<li><%= link_to "EVENTS", controller: "events" %></li>
-				<li><%= link_to "CONTACT", controller: "contacts" %></li>
+				<li><%= link_to "BAR", photos_path, id: cp(photos_path) %></li>
+				<li><%= link_to "MENU", events_path, id: cp(photos_path) %></li>
+				<li><%= link_to "EVENTS", events_path, id: cp(events_path) %></li>
+				<li><%= link_to "CONTACT", contacts_path, id: cp(contacts_path) %></li>
 			<ul>
 		</div>
 		<div id="content">

@@ -1,4 +1,6 @@
 <div id="header">Events</div>
+<%= link_to "New event", action: "new" %>
+
 <% @events.each do |e| %>
 	<div class="event">
 	<%= image_tag e.image.url(:medium) %>
@@ -11,6 +13,4 @@
 	</p>
 	</div>
 <% end %>
-	<p>
-	<%= link_to "New event", action: "new" %>
-	</p>
+<div class="paginate"><%= will_paginate @events, :page_links => false, :previous_label => "< Newer", :next_label => "Older >" %></div>
