@@ -1,3 +1,60 @@
 // Place all the styles related to the gallery controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#wrapper{
+	margin: 0;
+	padding: 0;
+}
+
+.slider{
+    height: 15em;
+    width: 25em;
+	}
+.slider li{
+	list-style-type: none;
+	position: absolute;
+	}
+
+.slider input {
+    display: none;
+}
+.slider label {
+    background-color: #111;
+    bottom: -2em;
+    cursor: pointer;
+    display: block;
+    height: .5em;
+    position: absolute;
+    width: .5em;
+    z-index: 10;
+}
+.slider li:nth-child(1) label {
+    left: .5em;
+}
+.slider li:nth-child(2) label {
+    left: 3em;
+}
+.slider li:nth-child(3) label {
+    left: 5.5em;
+}
+.slider li:nth-child(4) label {
+    left: 8em;
+}
+.slider li:nth-child(5) label {
+    left: 10.5em;
+}
+.slider li:nth-child(6) label {
+    left: 13em;
+}
+.slider img {
+    height: 30em;
+    opacity: 0;
+    transition: .25s;
+    vertical-align: top;
+    visibility: hidden;
+}
+.slider li input:checked ~ img {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+}

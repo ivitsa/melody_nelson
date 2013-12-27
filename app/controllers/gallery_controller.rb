@@ -1,5 +1,7 @@
 class GalleryController < ApplicationController
   def index
+  	  @photos = Photo.all
+  	  @first=1;
   end
 
   def editimages
@@ -58,6 +60,6 @@ class GalleryController < ApplicationController
   
   private
   def photo_params
-  	  params.require(:photo).permit(:description, :position, :image)
+  	  params.require(:photo).permit(:id, :description, :position, :image)
   end
 end
