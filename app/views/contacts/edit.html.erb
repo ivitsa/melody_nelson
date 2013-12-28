@@ -1,14 +1,18 @@
-<h1>Contacts#edit</h1>
-<p>Find me in app/views/contacts/edit.html.erb</p>
+<div id="header">Edit contact</div>
+<div class="linkedit">
+	<%= link_to "Back", contacts_path %>
+</div>
+<div class="form">
 <%= form_for @contact do |c| %>
-	<p>
-	Name:<%= c.text_field :name %><br/>
-	Address:<%= c.text_field :address %><br/>
-	Phone:<%= c.text_field :phone %><br/>
-	Email:<%= c.text_field :email %><br/>
-	Opening hours: <%= c.text_field :opening_hours %><br/>
-	Facebook: <%= c.text_field :facebook %><br/>
-	<%= c.submit "Update" %>
-	</p>
+	<table>
+	<tr><td>Name:</td><td><%= c.text_field :name %></td></tr>
+	<tr><td>Address:</td><td><%= c.text_field :address %></td></tr>
+	<tr><td>Phone:</td><td><%= c.text_field :phone %></td></tr>
+	<tr><td>Email:</td><td><%= c.text_field :email %></td></tr>
+	<tr><td>Opening hours:</td><td><%= c.text_field :opening_hours %></td></tr>
+	<tr><td>Facebook:</td><td><%= c.text_field :facebook %></td></tr>
+	<tr><td><%= c.submit "Update" %></td></tr>
+	</table>
 <% end %>
-<%= link_to "Back", contacts_path %>
+</div>
+

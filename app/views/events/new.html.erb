@@ -1,12 +1,15 @@
-<h1>Events#new</h1>
-<p>Find me in app/views/events/new.html.erb</p>
+<div id="header">Add new event</div>
+<div class="linkedit">
+	<%= link_to "Back", events_path %>
+</div>
+<div class="form">
 <%= form_for @event, :html => {:multipart => 'true'} do |e| %>
-	<p>
-	<%= e.text_field :headline %><br/>
-	<%= e.text_area :description, size: "60x12" %><br/>
-	<%= e.datetime_select :time %><br/>
-	<%= e.file_field :image %><br/>
-	<%= e.submit "New Event" %>
-	</p>
+	<table>
+	<tr><td>Headline:</td><td><%= e.text_field :headline %></td></tr>
+	<tr><td>Description:</td><td><%= e.text_area :description, size: "60x12" %></td></tr>
+	<tr><td>Date and time:</td><td><%= e.datetime_select :time %></td></tr>
+	<tr><td>Image:</td><td><%= e.file_field :image %></td></tr>
+	<tr><td><%= e.submit "Create" %></td></tr>
+	</table>
 <% end %>
-<%=link_to "Back", events_path %>
+</div>

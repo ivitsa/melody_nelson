@@ -1,11 +1,14 @@
-<h1>Gallery#edit</h1>
-<p>Find me in app/views/gallery/edit.html.erb</p>
+<div id="header">Edit image</div>
+<div class="linkedit">
+	<%= link_to "Back to Edit images", action: "editimages" %>
+</div>
+<div class="form">
 <%= form_for @photo, :html => {:multipart => 'true'} do |p| %>
-	<p>
-	<%= p.text_field :description %><br/>
-	<%= p.text_field :position %><br/>
-	<%= p.file_field :image %><br/>
-	<%= p.submit "Update" %>
-	</p>
+	<table>
+	<tr><td>Description:</td><td><%= p.text_field :description %></td></tr>
+	<tr><td>Position:</td><td><%= p.text_field :position %></td></tr>
+	<tr><td>Photo:</td><td><%= p.file_field :image %></td></tr>
+	<tr><td><%= p.submit "Update" %></td></tr>
+	</table>
 <% end %>
-<%= link_to "Back to edit images", action: "editimages" %>
+</div>

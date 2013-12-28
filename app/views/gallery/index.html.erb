@@ -1,5 +1,16 @@
+<% content_for :head do %>
+	<style type="text/css">
+	<% for i in 0..@photos.length-1 %>
+		.slider li:nth-child(<%= i+1%>) label {
+			left: <%= (25*i).to_s + "px" %>;
+		}
+	<% end %>
+	</style>
+<% end %>
+		
+<div id="header">The Bar</div>
+<div class="linkedit"><%= link_to "Edit images", action: "editimages" %></div>
 <div id="notice"><%= flash[:notice] %></div>
-<div id="wrapper">
 <ul class="slider">
 	<% @photos.each do |p| %>
 		<li>
@@ -14,7 +25,6 @@
 		</li>
 	<% end %>
 </ul>
-</div>
 <!--<p>
 <%= link_to "Upload new photo", action: "new" %>
 </p>-->

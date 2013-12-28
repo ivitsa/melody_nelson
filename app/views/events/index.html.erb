@@ -1,5 +1,5 @@
 <div id="header">Events</div>
-<%= link_to "New event", action: "new" %>
+<div class="linkedit"><%= link_to "New event", action: "new" %></div>
 
 <% @events.each do |e| %>
 	<div class="event">
@@ -7,7 +7,7 @@
 	<div class="eventhead"><%=e.headline %></div>
 	<div class="eventtime"><%= e.time.strftime("%A, %d. %m. %y, %H:%M h.") %></div>
 	<p>
-	<%= e.description %><br/>
+	<%= e.description.gsub(/\n/, '<br/>').html_safe %><br/>
 	<%= link_to "Update", edit_event_path(e) %>
 	<%= link_to "Delete", event_path(e), method: "delete", data: { confirm: 'Are you sure?'} %>
 	</p>
