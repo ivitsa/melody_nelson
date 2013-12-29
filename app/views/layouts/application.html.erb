@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Melody Nelson Bar</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
-  <%= csrf_meta_tags %>
-  <%= yield :head %>
+	<%= favicon_link_tag %>
+	<title>Melody Nelson Bar</title>
+	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
+	<%= csrf_meta_tags %>
+	<%= yield :head %>
 </head>
 <body>
 <div id="logo"><%= link_to image_tag("logo.jpg"), events_path %></div>
