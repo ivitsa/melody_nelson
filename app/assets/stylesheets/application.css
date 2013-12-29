@@ -11,7 +11,7 @@
  *= require_self
  *= require_tree .
  */
- body {
+body {
 	background-color: white;
 	margin: 0;
 	padding: 0;
@@ -115,7 +115,13 @@ a:hover {
 .form {
 	margin: 20px;
 }
-	
+#notice {
+	position: absolute;
+	top: 630px;
+	display: inline;
+	text-align: center;
+	width: 100%;
+}
 
 
 

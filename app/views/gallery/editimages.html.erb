@@ -6,16 +6,16 @@
 <% if @photos.count!=0 %>
 <div id="imgwrapper">
 	<% @photos.each do |p| %>
-		
 		<div class="imgthumb">
 		<%= image_tag p.image.url(:small) %>
-		<p><%=p.description %>
+		<p><%=p.position %>
 		<%= link_to "Update", edit_gallery_path(p) %>
 		<%= link_to "Delete", gallery_path(p), method: "delete", data: { confirm: 'Are you sure?'} %>
 		</p>
 		</div>
 	<% end %>
 </div>
+<div class="paginate"><%= will_paginate @photos %></div>
 <% else %>
 	<div class="imgthumb">
 	You haven't uploaded any photos yet.

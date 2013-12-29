@@ -1,11 +1,11 @@
 class GalleryController < ApplicationController
   def index
-  	  @photos = Photo.all
+  	  @photos = Photo.all.order('position ASC')
   	  @first=1;
   end
 
   def editimages
-  	  @photos = Photo.all
+  	  @photos = Photo.paginate(:page => params[:page], :per_page => 9).order('position ASC')
   end
 
   def edit
