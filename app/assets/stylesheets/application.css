@@ -122,7 +122,15 @@ a:hover {
 	text-align: center;
 	width: 100%;
 }
-
+#logout {
+	width: 250px;
+	background-color: white;
+	top: 460px;
+	left: 0px;
+	margin: 10px;
+	position: absolute;
+	display: inline;
+}
 
 
 

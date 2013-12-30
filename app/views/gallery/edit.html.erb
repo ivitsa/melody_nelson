@@ -1,7 +1,9 @@
 <div id="header">Edit image</div>
+
 <div class="linkedit">
 	<%= link_to "Back to Edit images", action: "editimages" %>
 </div>
+
 <div class="form">
 <%= form_for @photo, :html => {:multipart => 'true'} do |p| %>
 	<table>

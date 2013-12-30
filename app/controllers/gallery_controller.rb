@@ -1,4 +1,5 @@
 class GalleryController < ApplicationController
+	before_filter :require_user, :only => [:new, :create, :edit, :update, :destroy, :editimages]
   def index
   	  @photos = Photo.all.order('position ASC')
   	  @first=1;

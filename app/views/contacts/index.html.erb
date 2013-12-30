@@ -12,8 +12,10 @@
 		Find us on:<br/>
 		<%= link_to image_tag('facebook_white.png') + "| Facebook", @contact.facebook, :style=> "float: left;", :target=>"_blank" %>
 		<%= link_to image_tag('googlemaps.png') + "| Google maps", "http://maps.google.com?q=" + @contact.address, :style=> "float: right;", :target=>"_blank" %><br/><br/><br/>
-		<%= link_to "Update contact info", edit_contact_path(@contact) %>
-		<%= link_to "Reset contact info", contact_path(@contact), method: "delete", data: { confirm: 'Are you sure?'} %>
+		<% if current_user_session %>
+			<%= link_to "Update contact info", edit_contact_path(@contact) %>
+			<%= link_to "Reset contact info", contact_path(@contact), method: "delete", data: { confirm: 'Are you sure?'} %>
+		<% end %>
 		</p>
 		</div>
 <% else %>

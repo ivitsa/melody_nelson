@@ -9,8 +9,11 @@
 <% end %>
 		
 <div id="header">The Bar</div>
-<div class="linkedit"><%= link_to "Edit images", action: "editimages" %></div>
-
+<% if current_user_session %>
+	<div class="linkedit">
+		<%= link_to "Edit images", action: "editimages" %>
+	</div>
+<% end %>
 <ul class="slider">
 	<% @photos.each do |p| %>
 		<li>

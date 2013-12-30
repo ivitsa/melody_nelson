@@ -1,15 +1,21 @@
 <div id="header">Events</div>
-<div class="linkedit"><%= link_to "New event", action: "new" %></div>
+<div class="linkedit">
+	<% if current_user_session %>
+		<%= link_to "New event", action: "new" %>
+	<% end %>
+</div>
 
 <% @events.each do |e| %>
 	<div class="event">
 	<%= image_tag e.image.url(:medium) %>
 	<div class="eventhead"><%=e.headline %></div>
-	<div class="eventtime"><%= e.time.strftime("%A, %d. %m. %y, %H:%M h.") %></div>
+	<div class="eventtime"><%= e.time.in_time_zone('Berlin').strftime("%A, %d. %m. %y, %H:%M h.") %></div>
 	<p>
 	<%= e.description.gsub(/\n/, '<br/>').html_safe %><br/>
-	<%= link_to "Update", edit_event_path(e) %>
-	<%= link_to "Delete", event_path(e), method: "delete", data: { confirm: 'Are you sure?'} %>
+	<% if current_user_session %>
+		<%= link_to "Update", edit_event_path(e) %>
+		<%= link_to "Delete", event_path(e), method: "delete", data: { confirm: 'Are you sure?'} %>
+	<% end %>
 	</p>
 	</div>
 <% end %>

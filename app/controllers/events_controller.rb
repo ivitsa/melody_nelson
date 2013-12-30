@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+	before_filter :require_user, :only => [:new, :create, :edit, :update, :destroy]
   def index
   	  @events=Event.paginate(:page => params[:page], :per_page => 3).order('time DESC')
   end

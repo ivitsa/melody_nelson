@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131222190829) do
+ActiveRecord::Schema.define(version: 20131229181547) do
 
   create_table "contacts", force: true do |t|
     t.string   "name"
@@ -45,6 +45,33 @@ ActiveRecord::Schema.define(version: 20131222190829) do
     t.datetime "image_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "user_sessions", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "session_id", null: false
+    t.text     "data"
+  end
+
+  add_index "user_sessions", ["session_id"], name: "index_user_sessions_on_session_id"
+  add_index "user_sessions", ["updated_at"], name: "index_user_sessions_on_updated_at"
+
+  create_table "users", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "login",                         null: false
+    t.string   "email",                         null: false
+    t.string   "crypted_password",              null: false
+    t.string   "password_salt",                 null: false
+    t.string   "persistence_token",             null: false
+    t.integer  "login_count",       default: 0, null: false
+    t.datetime "last_request_at"
+    t.datetime "last_login_at"
+    t.datetime "current_login_at"
+    t.string   "last_login_ip"
+    t.string   "current_login_ip"
+    t.integer  "is_admin",          default: 0, null: false
   end
 
 end

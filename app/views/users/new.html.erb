@@ -1,0 +1,21 @@
+<div id="header">Add User</div>
+<div class="form">
+<%= form_for @user, :url => users_path do |f| %>
+  <%= f.label :login %><br />
+  <%= f.text_field :login %><br />
+  <br />
+  <%= f.label :email %><br />
+  <%= f.text_field :email %><br />
+  <br />
+  <%= f.label :password %><br />
+  <%= f.password_field :password %><br />
+  <br />
+  <%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %><br />
+  <br />
+  <%= f.label :is_admin %><br />
+  <%= f.check_box :is_admin %><br />
+  <br />
+  <%= f.submit "Add User" %>
+<% end %>
+</div>

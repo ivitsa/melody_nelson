@@ -19,10 +19,17 @@
 				<li><%= link_to "CONTACT", contacts_path, id: cp(contacts_path) %></li>
 			<ul>
 		</div>
+		<div id="logout">
+			<% if current_user_session %>
+				<%= "Logged in as "+current_user.login %><br />
+					<%= link_to "Logout", user_session_path(current_user_session), method: "delete", data: { confirm: 'Are you sure?'} %>
+				<% end %>
+		</div>
 		<div id="content">
 			<%= yield %>
 		</div>
 <div id="notice"><%= flash[:notice] %></div>
+
 
 
 </body>

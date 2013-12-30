@@ -1,4 +1,6 @@
 class ContactsController < ApplicationController
+	before_filter :require_user, :only => [:new, :create, :edit, :update, :destroy]
+	
   def index
   	  @contact=Contact.first	  	  
   end
