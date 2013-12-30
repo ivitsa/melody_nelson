@@ -1,6 +1,6 @@
 <div id="header">Login</div>
 <div class="form">
-<%= form_for @user_session, :url => user_sessions_path do |f| %>
+<%= form_for @user_session do |f| %>
   <%= f.label :login %><br />
   <%= f.text_field :login %><br />
   <br />

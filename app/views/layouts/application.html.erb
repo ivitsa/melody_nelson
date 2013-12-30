@@ -22,8 +22,12 @@
 		<div id="logout">
 			<% if current_user_session %>
 				<%= "Logged in as "+current_user.login %><br />
-					<%= link_to "Logout", user_session_path(current_user_session), method: "delete", data: { confirm: 'Are you sure?'} %>
+				<%= link_to "Logout", user_session_path(current_user_session), method: "delete", data: { confirm: 'Are you sure?'} %><br />
+				<%= link_to "Change password", edit_user_path(current_user) %>
+				<% if current_user.is_admin==1 %>
+					<br /><%= link_to "Manage users", users_path %>
 				<% end %>
+			<% end %>
 		</div>
 		<div id="content">
 			<%= yield %>

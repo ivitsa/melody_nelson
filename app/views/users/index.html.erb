@@ -1,0 +1,13 @@
+<div id="header">All users</div>
+<div class="linkedit">
+	<%= link_to "Add new user", action: "new" %>
+</div>
+<div class="form">
+<% @users.each do |u| %>
+	<%= "Login name: "+u.login %><br />
+	<%= "Email: "+u.email %><br />
+	<%= link_to "Edit", edit_user_path(u) %>
+	<%= link_to "Delete", user_path(u), method: "delete", data: { confirm: 'Are you sure?'} %><br /><br />
+<% end %>
+</div>
+	
