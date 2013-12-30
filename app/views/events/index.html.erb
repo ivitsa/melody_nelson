@@ -7,7 +7,11 @@
 
 <% @events.each do |e| %>
 	<div class="event">
-	<%= image_tag e.image.url(:medium) %>
+	<% if e.image_file_name %>
+		<%= image_tag e.image.url(:medium) %>
+	<% else %>
+		<%= image_tag "logo.jpg" %>
+	<%end%>
 	<div class="eventhead"><%=e.headline %></div>
 	<div class="eventtime"><%= e.time.in_time_zone('Berlin').strftime("%A, %d. %m. %y, %H:%M h.") %></div>
 	<p>

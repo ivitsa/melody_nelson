@@ -17,6 +17,7 @@ MelodyNelson::Application.routes.draw do
   get "events/new"
   
   root to: "contacts#index"
+  match "login" => "user_sessions#new", via: [:get, :post]
   
   resources :events, :path => "events"
   resources :contacts, :path => "contacts"
@@ -24,6 +25,7 @@ MelodyNelson::Application.routes.draw do
   resources :photos, :path => "gallery"
   resources :user_sessions
   resources :users
+  resources :menus, :path => "menus"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

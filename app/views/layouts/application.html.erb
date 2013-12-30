@@ -13,10 +13,10 @@
 <div id="logo"><%= link_to image_tag("logo.jpg"), events_path %></div>
 		<div id="sidebar">
 			<ul>
-				<li><%= link_to "BAR", photos_path, id: cp(photos_path) %></li>
-				<li><%= link_to "MENU", events_path, id: cp(photos_path) %></li>
+				<li><%= link_to "BAR", photos_path, id: ccon("gallery") %></li>
+				<li><%= link_to "MENU", menus_path, id: ccon("menus") %></li>
 				<li><%= link_to "EVENTS", events_path, id: ccon("events") %></li>
-				<li><%= link_to "CONTACT", contacts_path, id: cp(contacts_path) %></li>
+				<li><%= link_to "CONTACT", contacts_path, id: ccon("contacts") %></li>
 			<ul>
 		</div>
 		<div id="logout">
