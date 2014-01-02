@@ -10,7 +10,7 @@
 	<%= yield :head %>
 </head>
 <body>
-<div id="logo"><%= link_to image_tag("logo.jpg"), events_path %></div>
+<div id="logo"><%= link_to image_tag("logo.jpg"), contacts_path %></div>
 		<div id="sidebar">
 			<ul>
 				<li><%= link_to "BAR", photos_path, id: ccon("gallery") %></li>
@@ -32,9 +32,6 @@
 		<div id="content">
 			<%= yield %>
 		</div>
-<div id="notice"><%= flash[:notice] %></div>
-
-
-
+		<div id="notice"><%= flash[:notice] %></div>
 </body>
 </html>
