@@ -1,8 +1,8 @@
 class Event < ActiveRecord::Base
 	has_attached_file :image,
 		:styles => {:medium => "x140"},
-		:url => '/images/events/:id/:style/:basename.:extension',
-		:path => ':rails_root/public/images/events/:id/:style/:basename.:extension'
+		#:url => '/images/events/:id/:style/:basename.:extension',
+		#:path => ':rails_root/public/images/events/:id/:style/:basename.:extension'
 		
 	validates :headline, presence: true
 	validates :time, presence: true
