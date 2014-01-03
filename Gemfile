@@ -57,3 +57,6 @@ gem 'paperclip', '~> 3.0'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+#use AWS S3
+gem 'aws-sdk'
